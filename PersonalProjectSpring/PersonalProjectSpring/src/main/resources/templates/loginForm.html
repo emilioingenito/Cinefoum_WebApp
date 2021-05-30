@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(title='Login')"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div>
+		<h4>Login</h4>
+	</div>
+	<form th:action="@{/login}" method="POST">
+		<div>
+			<div>
+				<span>Username:</span>
+				<span><input name="username" type="text" required /></span>
+			</div>		
+			<div>
+				<span>Password:</span>
+				<span><input name="password" type="password" required /></span>
+			</div>
+			<div>
+				<span><button type="submit">Login</button></span>
+			</div>
+		</div>
+	</form>
+    <footer th:replace="fragments/base.html :: fondo(home='/')"></footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title=#{pageTitle.prodotto})"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+    <div>
+    	<h4 th:text="#{header.prodotto}">...</h4>
+    	<div th:if="${prodotto}" th:object="${prodotto}">
+			<h5 th:text="*{nome}">nome</h5>
+			<span th:text="*{descrizione}">descrizione </span>
+   		</div>
+    	<div th:unless="${prodotto}">Questo prodotto non esiste</div>
+    </div>
+    <footer th:replace="fragments/base.html :: fondo('/default')"></footer>
+</body>
+</html>
