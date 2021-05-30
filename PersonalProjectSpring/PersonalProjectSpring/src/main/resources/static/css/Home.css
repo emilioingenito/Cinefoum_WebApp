@@ -1,0 +1,137 @@
+
+*{
+    box-sizing: border-box;
+}
+
+.page{
+    min-height: 1000px;
+    background-color: black;
+    background-image: url(../images/pexels-photo-7991179.jpeg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+}
+
+.bloccoSala{
+    /* border: solid red 2px; */
+    height: 580px;
+}
+
+.bloccoPopCorn{
+    /* border: solid salmon 2px; */
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../images/giphy\ \(1\).gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bloccoPopCorn>.titolo{
+    /* border: solid green 2px; */
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 350%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    height: 60%;
+}
+
+.bottone{
+    border: black solid 3px;
+    border-radius: 30px;
+    width: fit-content;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 150%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: 20px;
+    padding: 7px;
+    background-color: rgba(255, 255, 255, 0.562);
+    text-decoration: none;
+    color: black;
+}
+
+.bloccoBianco{
+    /* border: solid blue 2px; */
+    height: 400px;
+    background: rgb(0,0,0);
+}
+
+.primoPiano{
+    /* border: solid fuchsia 2px; */
+    background-image: url(../images/1551783833_Untitled-collage-15.jpg);
+    background-size: contain;
+    background-position: center;
+}
+
+.scritta{
+    /* border: solid yellow 2px; */
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 350%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    margin-top: 2%;
+    text-decoration: underline #f86825;
+}
+
+
+.trailer{
+    /* border: solid purple 2px; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+.left{
+    margin-left: 5%;
+}
+
+.right{
+    margin-right: 5%;
+}
+
+@media screen and (max-width: 700px){
+
+    .bloccoPopCorn>.titolo{
+        /* border: solid green 2px; */
+        padding-left: 7%;
+    }
+
+    .scritta{
+        /* border: solid yellow 2px; */
+        padding-left: 7%;
+    }
+
+    .bloccoSala{
+        /* border: solid red 2px; */
+        height: fit-content;
+    }
+    
+
+    .trailer{
+        /* border: solid purple 2px; */
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2%;
+    }
+
+    .left ,.right{
+        /* border: solid rebeccapurple 2px; */
+        margin: 0;
+    }
+
+}

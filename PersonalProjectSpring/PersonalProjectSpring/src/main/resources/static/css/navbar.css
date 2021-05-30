@@ -1,0 +1,69 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.page{
+    min-height: 1000px;
+}
+
+.sfondoNero{
+    height: 90px;
+    background: black;
+}
+
+.navbar{
+    /* border: solid chartreuse 2px; */
+    background: rgba(0, 0, 0, 0.63);
+    height: 90px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+}
+
+
+.bordo{
+    border: #f36e31 solid 2px;
+    border-radius: 50px;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comando{
+    /* border: solid pink 2px; */
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 120%;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.801);
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.comandi{
+    /* border: #004d7a solid 2px; */
+    display: flex;
+    height: 40px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+
+
+
+
+@media screen and (max-width: 600px){
+
+
+    .comando{
+        font-size: 80%;
+    }
+
+}

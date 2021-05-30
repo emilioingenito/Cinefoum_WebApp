@@ -1,0 +1,54 @@
+
+*{
+    box-sizing: border-box;
+}
+
+.scheda{
+    /* border: solid hotpink 2px; */
+    background-image: url("../images/knivesOutSchedaFilm.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    display: flex;
+}
+
+.trama{
+    /* border: solid cadetblue 2px; */
+    font-family: 'Quicksand', sans-serif;
+    background-color: rgba(255, 255, 255, 0.616);
+    font-weight: 500;
+    font-size: 120%;
+    width: 70%;
+    padding: 10%;
+    padding-top: 5%;
+}
+
+.trafiletto{
+    background-color: rgba(255, 255, 255, 0.507);
+    width: 30%;
+    padding-top: 5%;
+}
+
+.regista{
+    /* border: solid saddlebrown 2px; */
+    padding:10%;
+    font-family: 'Quicksand', sans-serif;
+    font-style: oblique;
+    font-weight: 600;
+    font-size: 120%;
+}
+
+.cast{
+    /* border: solid khaki 2px; */
+    padding:10%;
+    font-family: 'Quicksand', sans-serif;
+    font-style: oblique;
+    font-weight: 600;
+    font-size: 120%;
+}
+
+a{
+    display: block;
+    margin-bottom: 2%;
+}

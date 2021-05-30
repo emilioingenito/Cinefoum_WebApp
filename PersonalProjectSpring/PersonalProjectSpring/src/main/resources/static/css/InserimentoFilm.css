@@ -1,0 +1,30 @@
+
+*{
+    box-sizing: border-box;
+}
+
+.form{
+    border: solid lightblue 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+}
+
+.nomeCampo{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 200%;
+}
+
+.contenuto, .file{
+    margin-top: 1%;
+}
+
+.bottoniConferma{
+    margin-top: 5%;
+    display: flex;
+    width: 12%;
+    justify-content: space-between;
+}

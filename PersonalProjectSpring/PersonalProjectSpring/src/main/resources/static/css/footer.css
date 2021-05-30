@@ -1,0 +1,24 @@
+
+*{
+    box-sizing: border-box;
+}
+
+.footer{
+    /* border: solid yellow 2px; */
+    height: 90px;
+    width: 100%;
+    background: rgb(21, 21, 22);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.icon{
+    /* border: solid red 2px; */
+    color: white;
+    background-color: #f36e31;
+    z-index: 1;
+    display: flex;
+}
+

@@ -1,0 +1,130 @@
+
+*{
+    box-sizing: border-box;
+}
+
+.film{
+    /* border: solid firebrick 2px; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.locandina{
+    border: solid rgb(36, 34, 178) 2px;
+    background-image: url(../images/cenaConDelitto.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: flex-end;
+}
+
+.locandina>a{
+    /* background-color: rgb(1, 103, 255); */
+    text-decoration: none;
+    color: white;
+    width: 80%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+}
+
+.dettagli{
+    /* border: solid rgb(173, 34, 178) 2px; */
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.trama{
+    /* border: solid rgb(75, 178, 34) 2px; */
+    height: 140px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 120%;
+}
+
+.date{
+    /* border: solid rgb(178, 176, 34) 2px; */
+    margin-top: 10px;
+}
+
+.riga{
+    /* border: solid rgb(178, 34, 130) 2px; */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.giorno{
+    /* border: solid rgb(140, 178, 34) 2px; */
+    width: 40%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+}
+
+.orario{
+    /* border: solid rgb(34, 149, 178) 2px; */
+    width: 60%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1000px){
+
+    .locandina{
+        width: 30%;
+    }
+
+    .date{
+        padding-left: 5%;
+    }
+
+    .trama{
+        padding-left: 5%;
+        padding-right: 2%;
+    }
+
+}
+
+@media screen and (max-width: 650px){
+
+    .locandina{
+        margin-bottom: 10%;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
+    .locandina{
+        background-size: contain;
+        background-position: top;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+
+    .trama{
+        font-size: 100%;
+    }
+
+    .locandina{
+        margin-bottom: 20%;
+    }
+
+    .locandina>a{
+        font-size: 80%;
+    }
+
+}

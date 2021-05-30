@@ -1,0 +1,133 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+
+.navbar{
+    /* border: solid chartreuse 2px; */
+    /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
+    background: rgb(0,0,0);
+    /* background: linear-gradient(90deg, rgba(0,0,0,1) 30%, rgba(45,44,44,1) 100%); */
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.peterPan{
+    /* border: #12ebaa solid 2px; */
+    display: flex;
+    margin-top: 2%;
+    height: 110px;
+    justify-content: space-between;
+}
+
+
+.immagine{
+    /* border: yellowgreen solid 2px; */
+    height: 100%;
+    width: 30%;
+    display: flex;
+    background-image: url(../images/100.webp);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+
+.titolo{
+    /* border: solid violet 2px; */
+    font-size: 300%;
+    /* font-style: italic; */
+    font-family: 'Quicksand', sans-serif;
+    color: #f86825;
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+
+.bordo{
+    border: #f36e31 solid 2px;
+    border-radius: 50px;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comando{
+    /* border: solid pink 2px; */
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 120%;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.801);
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.comandi{
+    /* border: #004d7a solid 2px; */
+    display: flex;
+    height: 40px;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.didascalia{
+    /* border: solid #004d7a 2px; */
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 150%;
+    margin-left: 6%;
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 900px){
+
+    .titolo{
+        /* border: solid rgb(173, 104, 173) 2px; */
+        font-size: 250%;
+        width: 100%;
+    }
+     
+    .immagine{
+        width: 90%;
+    }
+
+    .didascalia{
+        font-size: 110%;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
+    .titolo{
+        /* border: solid violet 2px; */
+        font-size: 250%;
+        width: 100%;
+        margin: 0;
+    }
+     
+    .immagine{
+        visibility: hidden;
+        width: 0;
+    }
+
+    .comando{
+        font-size: 80%;
+    }
+
+    .didascalia{
+        font-size: 90%;
+    }
+}
