@@ -16,7 +16,7 @@ public @Data class Attore extends Persona{
 	
 	@ManyToMany(mappedBy = "attori")
 	private List<Film> film_recitati;
-	//prova
+
 	public Attore() {
 		this.film_recitati = new LinkedList<Film>();
 	}
