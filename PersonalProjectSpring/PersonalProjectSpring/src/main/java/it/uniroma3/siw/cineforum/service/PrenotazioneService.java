@@ -1,6 +1,7 @@
 package it.uniroma3.siw.cineforum.service;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -83,7 +84,15 @@ public class PrenotazioneService {
 
 	public List<Prenotazione> findAll() {
 		
-		return (List<Prenotazione>) this.prenotazioneRepository.findAll();
+		List<Prenotazione> l = (List<Prenotazione>) this.prenotazioneRepository.findAll();
+		Collections.reverse(l);
+		return l;
+	}
+	
+
+	public void cancellaPrenotazione(Long idPrenotazione) {
+		this.prenotazioneRepository.delete(this.prenotazionePerId(idPrenotazione));
+		
 	}
 	
 }

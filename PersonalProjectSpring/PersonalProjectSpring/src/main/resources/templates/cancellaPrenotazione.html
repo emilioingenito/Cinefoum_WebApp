@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{/css/Inserimento.css}" rel="stylesheet">
+	<object th:replace="fragments/base.html :: headerfiles()" />
+</head>
+
+<body>
+	<header th:replace="fragments/base.html :: intestazione2"></header>
+
+
+	<form th:action="@{/cancellaPrenotazione}" method="POST" class="form page">
+		<div>
+		<h4 class="nomeCampo">Inserisci i dati della prenotazione che vuoi cancellare</h4>
+			<div>
+				<span class="nomeCampo">ID prenotazione:</span>
+				<span class="contenuto"><input type="text" name="idPrenotazione" /></span>
+				<!--<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>-->
+			</div>		
+			<div>
+				<span class="bottoniConferma"><button type="submit">Invio</button></span>
+			</div>
+			<p> Se non ricordi l'ID della tua prenotazione lo puoi trovare nell'elenco delle prenotazioni gia' effettuate</p>
+		</div>
+	</form>	
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+    
+</body>
+</html>

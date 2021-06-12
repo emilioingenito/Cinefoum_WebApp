@@ -22,4 +22,9 @@ public class FragmentController {
 	public String programmazione (Model model) {
 		return "Programmazione.html";
 	}
+	
+	@RequestMapping(value = "/homePrenotazione", method = RequestMethod.GET) 
+	public String homePrenotazione (Model model) {
+		return "homePrenotazioni.html";
+	}
 }

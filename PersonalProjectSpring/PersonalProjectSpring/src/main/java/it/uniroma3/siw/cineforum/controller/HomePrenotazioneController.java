@@ -31,8 +31,19 @@ public class HomePrenotazioneController {
 		return "mostraPrenotazione.html";
 	}
 	
+	@RequestMapping(value = "/cancellaPrenotazione", method = RequestMethod.GET) 
+	public String cancellaprenotazione (Model model) {
+		return "cancellaPrenotazione.html";
+	}
+	
+	@RequestMapping(value = "/cancellaPrenotazione", method = RequestMethod.POST) 
+	public String cancella (@RequestParam("idPrenotazione") Long idPrenotazione, Model model) {
+		this.prenotazioneService.cancellaPrenotazione(idPrenotazione);
+		return "homePrenotazioni.html";
+	}
+	
 	@RequestMapping(value = "/prenotazione", method = RequestMethod.POST)
-	public String saveOpera(
+	public String savePrenotazione(
 			@RequestParam("nomeSala") String nomeSala,
 			@RequestParam("username") String username,
 			@RequestParam("data") @DateTimeFormat(iso = ISO.DATE) LocalDate data,

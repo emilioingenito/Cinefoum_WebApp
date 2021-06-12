@@ -5,7 +5,7 @@
 	<object  th:replace="fragments/base.html :: headerfiles()"/> 
 </head>
 <body>
-	<header th:replace="fragments/base.html :: intestazione"></header>
+	<header th:replace="fragments/base.html :: intestazione3"></header>
 	
 	
 	<div class="page form"> 	
@@ -46,6 +46,8 @@
             </td>
         </tr>
     </table>
+    <span>Torna al</span>
+	<a th:href="@{'/login'}"> LOGIN </a>
 	</form>
 
 	</div>
