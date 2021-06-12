@@ -1,0 +1,69 @@
+
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+}
+
+
+/*************************/
+/*CSS Contenuto della pagina*/
+/*************************/
+
+ul{
+	list-style-type: none;
+}
+
+.page_content{
+    /* border: solid yellow 2px; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 1000px;
+    background-image: url(../images/tickets-vector-design-templates-movie-theater-cinema-circus-concert-sh.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* align-items: center; */
+}
+
+li{
+	background-color: white;
+}
+
+.nome_pagina{
+    /* border: solid aqua 2px; */
+    padding-left: 7%;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-size: 300%;
+}
+
+.single_collection{
+    border: solid black 1px;
+    box-shadow: 4px 8px rgba(175, 172, 172, 0.596);
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.description{
+    /* border: solid red 2px;; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+.param{
+    /* border: solid blue 2px; */
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+

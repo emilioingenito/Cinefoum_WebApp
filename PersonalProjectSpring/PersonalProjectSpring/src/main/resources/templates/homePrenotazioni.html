@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{/css/homePrenotazione.css}" rel="stylesheet">
+	<object  th:replace="fragments/base.html :: headerfiles()"/>
+    <link href="../static/css/HomeLogin.css" rel="stylesheet"/>
+    <link href="../static/css/Navbar.css" rel="stylesheet"/>
+</head>
+
+<body>
+	<header th:replace="fragments/base.html :: intestazione2"></header>
+
+    <div class="elencoAzioni page">
+        <a class="azione" th:href="@{'/prenotazione'}">Prenota il tuo biglietto</a>
+        <a class="azione" th:href="@{'/mostraPrenotazione'}">Vedi le tue prenotazioni</a>
+    </div>
+    
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+    
+</body>
+</html>

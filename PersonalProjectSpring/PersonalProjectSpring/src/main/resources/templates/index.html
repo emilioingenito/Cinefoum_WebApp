@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-	<head th:replace="fragments/base.html :: headerfiles(title='SIW')"> </head>
+<html lang="en">
+<head>
+	<link th:href="@{/css/Home.css}" rel="stylesheet">
+	<link rel="stylesheet" href="../static/css/Home.css">
+	<object  th:replace="fragments/base.html :: headerfiles()"/>	
+</head>
 <body>
+
 	<header th:replace="fragments/base.html :: intestazione"></header>
-    <div>
-    	<h4 th:text="#{header.index}">Welcome Page</h4>
-		<div>
-			<a th:href="@{/login}" th:text="#{index.login}">Accedi</a>
-   		</div>
-		<div>
-			<a th:href="@{/register}" th:text="#{index.register}">Registrati</a>
-   		</div>
+
+    <div class="page">
+
+        <div class="bloccoPopCorn">
+            <div class="titolo">Scopri i film in programma</div>
+            <a th:href="@{'/programmazione'}" class="bottone">Vai al catalogo</a>
+        </div>
+
+        <div class="bloccoSala">
+            <div class="scritta">Prossimi arrivi</div>
+            <div class="trailer">
+                <iframe width="400" height="315" class="left" src="https://www.youtube.com/embed/mP0VHJYFOAU?start=16" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="400" height="315" class="right" src="https://www.youtube.com/embed/jvMaHOOY5VA?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+   
     </div>
-    <footer th:replace="fragments/base.html :: fondo(home='/')"></footer>
+      
+    <footer th:replace="fragments/base.html :: fondo"></footer>
 </body>
 </html>

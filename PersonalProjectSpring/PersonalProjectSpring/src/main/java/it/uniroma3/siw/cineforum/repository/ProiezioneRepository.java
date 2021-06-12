@@ -13,7 +13,7 @@ public interface ProiezioneRepository extends CrudRepository<Proiezione, Long>{
 	public List<Proiezione> findBySala(String sala);
 	public List<Proiezione> findByOrario(LocalTime orario);
 	public List<Proiezione> findByData(LocalDate data);
-	public List<Proiezione> findByCodice(String codice);
+	public List<Proiezione> findBySalaAndData(String sala, LocalDate data);
 	
 	
 }

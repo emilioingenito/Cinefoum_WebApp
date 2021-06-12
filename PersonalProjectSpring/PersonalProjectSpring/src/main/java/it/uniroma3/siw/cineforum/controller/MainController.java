@@ -1,4 +1,4 @@
-package it.uniroma3.siw.spring.controller;
+package it.uniroma3.siw.cineforum.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

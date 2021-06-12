@@ -29,11 +29,6 @@ public class ProiezioneService {
 		return proiezioneRepository.save(p);
 	}
 	
-	@Transactional
-	public void elimina(Proiezione p) {
-		if (this.alreadyExists(p))
-			this.proiezioneRepository.delete(p);
-	}
 	
 	@Transactional 
 	public void eliminaTutti() {
@@ -69,9 +64,5 @@ public class ProiezioneService {
 		return this.proiezioneRepository.findByOrario(orario);
 	}
 
-	@Transactional
-	public boolean alreadyExists(Proiezione p) {
-		List<Proiezione> proiezioni = this.proiezioneRepository.findByCodice(p.getCodice());
-		return proiezioni.size() > 0;
-	}
+
 }

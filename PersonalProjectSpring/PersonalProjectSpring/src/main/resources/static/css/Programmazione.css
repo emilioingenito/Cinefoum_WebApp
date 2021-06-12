@@ -11,7 +11,7 @@
 }
 
 .locandina{
-    border: solid rgb(36, 34, 178) 2px;
+    /*border: solid rgb(36, 34, 178) 2px;*/
     background-image: url(../images/cenaConDelitto.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -24,7 +24,7 @@
 }
 
 .locandina>a{
-    /* background-color: rgb(1, 103, 255); */
+    background-color: rgb(1, 103, 255);
     text-decoration: none;
     color: white;
     width: 80%;

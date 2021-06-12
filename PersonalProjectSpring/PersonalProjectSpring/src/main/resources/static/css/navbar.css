@@ -15,7 +15,7 @@ body{
     background: black;
 }
 
-.navbar{
+.navbar2{
     /* border: solid chartreuse 2px; */
     background: rgba(0, 0, 0, 0.63);
     height: 90px;
@@ -34,7 +34,7 @@ body{
     justify-content: space-between;
 }
 
-.comando{
+.comando2{
     /* border: solid pink 2px; */
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
@@ -47,7 +47,7 @@ body{
     align-items: center;
 }
 
-.comandi{
+.comandi2{
     /* border: #004d7a solid 2px; */
     display: flex;
     height: 40px;
@@ -62,7 +62,7 @@ body{
 @media screen and (max-width: 600px){
 
 
-    .comando{
+    .comando2{
         font-size: 80%;
     }
 

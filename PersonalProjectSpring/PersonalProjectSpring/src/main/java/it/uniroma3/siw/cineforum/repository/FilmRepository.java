@@ -10,5 +10,5 @@ import it.uniroma3.siw.cineforum.model.Film;
 public interface FilmRepository extends CrudRepository<Film, Long>{
 	
 	public List<Film> findByTitolo(String titolo);
-	public List<Film> findByAnno(LocalDate annoDiUscita);
+	public List<Film> findByAnnoUscita(LocalDate annoDiUscita);
 }

@@ -1,23 +1,70 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="headerfiles(title)">
+
+<head th:fragment="headerfiles()">
 	<meta charset="UTF-8" />
-	<link th:href="@{/css/my-style.css}" rel="stylesheet">
-	<title th:text="${title}"></title>
+	<link th:href="@{/css/navbarHome.css}" rel="stylesheet">
+	<link th:href="@{/css/footer.css}" rel="stylesheet">
+	<link th:href="@{/css/navbar.css}" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+	 integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
+	 crossorigin="anonymous" />
+	 <link rel="stylesheet" href="../../static/css/navbarHome.css">
+	 <link rel="stylesheet" href="../../static/css/navbar.css">
+	 <link rel="stylesheet" href="../../static/css/footer.css">
 </head>
+
 <body>
+
+	<!-- Navbar  -->
 	<header th:fragment="intestazione">
-		<h1>Siw - Spring Very Simple Demo</h1>
+        <div class="navbar">
+            <div class="comandi">
+                <a th:href="@{'/home'}" class="comando">Home</a>
+                <a th:href="@{'/programmazione'}" class="comando">Film</a>
+                <a th:href="@{'/login'}" class="comando bordo">Prenota il tuo biglietto</a>
+                <a th:href="@{'/informazioni'}" class="comando">Informazioni</a>
+            </div>
+            <div class="peterPan">
+                <div class="titolo">Cineforum Peter Pan</div>
+                <div class="immagine"></div>
+            </div>
+            <div class="didascalia">A differenza che nel cinema, nella vita non esiste il replay -Gabriele Salvatores</div>
+        </div>
 	</header>
 
-	<p>Go to the next page to see fragments in action</p>
-	<aside>
-		<div>This is a sidebar</div>
-	</aside>
-	<div class="another">This is another sidebar</div>
+	<!-- Navbar dopo login  -->
+	<header th:fragment="intestazione2">
+		<div class="navbar2">
+            <div class="comandi2">
+                <a th:href="@{'/home'}" class="comando2">Home</a>
+                <a th:href="@{'/logout'}" class="comando2">Logout</a>
+            </div>
+		</div>
+	</header>
 	
-	<footer th:fragment="fondo(home)">
-		<a th:href="@{${home}}">Home</a>
+	<!-- Navbar 2 senza login  -->
+	<header th:fragment="intestazione3">
+		<div class="navbar2">
+            <div class="comandi2">
+                <a th:href="@{'/home'}" class="comando2">Home</a>
+                <a th:href="@{'/programmazione'}" class="comando2">Film</a>
+                <a th:href="@{'/login'}" class="comando2 bordo">Prenota il tuo biglietto</a>
+                <a th:href="@{'/informazioni'}" class="comando2">Informazioni</a>
+            </div>
+        </div>
+	</header>
+
+        
+
+	<!-- Footer  -->
+	<footer th:fragment="fondo" class="footer">
+            <i class="fab fa-twitter-square fa-3x icon"></i>
+            <i class="fab fa-instagram-square fa-3x icon"></i>
+            <i class="fab fa-facebook-square fa-3x icon"></i>
+            <i class="fab fa-linkedin fa-3x icon"></i>
 	</footer>
+
 </body>
+
 </html>

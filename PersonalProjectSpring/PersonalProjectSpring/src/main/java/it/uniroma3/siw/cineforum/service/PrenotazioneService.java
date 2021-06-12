@@ -10,13 +10,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.uniroma3.siw.cineforum.model.Prenotazione;
+import it.uniroma3.siw.cineforum.model.Proiezione;
+import it.uniroma3.siw.cineforum.model.User;
 import it.uniroma3.siw.cineforum.repository.PrenotazioneRepository;
+import it.uniroma3.siw.cineforum.repository.ProiezioneRepository;
+import it.uniroma3.siw.cineforum.repository.UserRepository;
 
 @Service
 public class PrenotazioneService {
 	
 	@Autowired
 	private PrenotazioneRepository prenotazioneRepository; 
+	
+	@Autowired
+	private UserRepository userRepository; 
+	
+	@Autowired
+	private ProiezioneRepository proiezioneRepository; 
 	
 	@Transactional
 	public long numeroPrenotazioni() {
@@ -30,7 +40,6 @@ public class PrenotazioneService {
 	
 	@Transactional
 	public void elimina(Prenotazione p) {
-		if (this.alreadyExists(p))
 			this.prenotazioneRepository.delete(p);
 	}
 	
@@ -53,14 +62,28 @@ public class PrenotazioneService {
 			return null;
 	}
 	
-	@Transactional
-	public List<Prenotazione> prenotazioniPerData(LocalDate data) {
-		return prenotazioneRepository.findByData(data);
-	}
+
 
 	@Transactional
-	public boolean alreadyExists(Prenotazione p) {
-		List<Prenotazione> prenotazioni = this.prenotazioneRepository.findByCodice(p.getCodice());
-		return prenotazioni.size() > 0;
+	public Prenotazione savePrenotazioneToDB(String nomeSala, String username, LocalDate data, Integer numeroPosti) {
+		Prenotazione p = new Prenotazione();
+		
+		p.setNumeroPosti(numeroPosti);
+		
+		User u = this.userRepository.findByNome(username).get(0);
+		p.setSocio(u);
+		
+		Proiezione pr = this.proiezioneRepository.findBySalaAndData(nomeSala, data).get(0);
+		p.setProiezione(pr);
+		
+		this.inserisci(p);
+		return p;
+		
 	}
+
+	public List<Prenotazione> findAll() {
+		
+		return (List<Prenotazione>) this.prenotazioneRepository.findAll();
+	}
+	
 }

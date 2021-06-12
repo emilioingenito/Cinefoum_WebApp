@@ -34,9 +34,7 @@ public @Data class Proiezione {
 	
 	@NonNull
 	private LocalTime orario;
-	
-	private String codice;
-	
+
 	/*ASSOCIAZIONI*/
 	
 	@ManyToOne

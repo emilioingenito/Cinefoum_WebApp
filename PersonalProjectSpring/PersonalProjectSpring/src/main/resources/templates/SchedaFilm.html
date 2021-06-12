@@ -5,23 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/SchedaFilm.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../static/css/SchedaFilm.css">
+    <link th:href="@{/css/SchedaFilm.css}" rel="stylesheet">
+    <object  th:replace="fragments/base.html :: headerfiles()"/>
 </head>
 <body>
-    <div class="page">
-        <!--Navbar-->
-        <div class="navbar">
-            <div class="comandi">
-                <a href="Home.html" class="comando">Home</a>
-                <a href="Programmazione.html" class="comando">Film</a>
-                <a href="" class="comando bordo">Prenota il tuo biglietto</a>
-                <a href="Informazioni.html" class="comando">Informazioni</a>
-            </div>
-        </div>
 
+	<header th:replace="fragments/base.html :: intestazione3"></header>
+
+    <div class="page">
+       
         <div class="sfondoNero"></div>
 
         <div class="scheda">
@@ -73,13 +66,7 @@
     </div>
 
 
-        <!--Footer-->
-        <div class=footer>
-            <i class="fab fa-twitter-square fa-3x icon"></i>
-            <i class="fab fa-instagram-square fa-3x icon"></i>
-            <i class="fab fa-facebook-square fa-3x icon"></i>
-            <i class="fab fa-linkedin fa-3x icon"></i>
-        </div>
-    </div>
+     <footer th:replace="fragments/base.html :: fondo"></footer>
+
 </body>
 </html>

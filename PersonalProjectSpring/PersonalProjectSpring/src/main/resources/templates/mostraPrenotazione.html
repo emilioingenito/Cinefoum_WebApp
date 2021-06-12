@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{/css/Prenotazioni.css}" rel="stylesheet">
+	<object  th:replace="fragments/base.html :: headerfiles()"/>
+</head>
+
+<body>
+	<header th:replace="fragments/base.html :: intestazione2"></header>
+
+
+    <div class="page">
+    <div class="sfondoNero"></div>
+    <!-- Contenuto Pagina -->
+      <h1 class="nome_pagina">Prenotazioni</h1>
+      <div class="page_content">       
+        
+		<ul>
+			<li th:each="prenotazione : ${prenotazioni}">
+				<div class="single_collection">
+					<div class="description">
+						<div>
+							<span class="param">Id della prenotazione:</span>
+							<span  th:text="${prenotazione.id}" class="param">Dream Collection</span>
+						</div>
+						<div>
+							<span class="param">Numero posti prenotati</span>
+							<span  th:text="${prenotazione.numeroPosti}" class="param">Dream Collection</span>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+      </div>
+    </div>
+
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+    
+  </body>

@@ -60,7 +60,7 @@ public class FilmService {
 	
 	@Transactional
 	public List<Film> filmPerAnno(LocalDate anno) {
-		return filmRepository.findByAnno(anno);
+		return filmRepository.findByAnnoUscita(anno);
 	}
 
 	@Transactional
