@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
 
 import lombok.Data;
@@ -25,12 +26,15 @@ public @Data abstract class Persona {
 	private String cognome;
 
 	@NonNull
-	private LocalDate annoNascita;
+	private LocalDate dataNascita;
 	
-	private LocalDate annoMorte;
+	private LocalDate dataMorte;
 
 	@NonNull
 	private String luogoNascita;
 	
 	private String luogoMorte;
+	
+	@Lob
+	private String foto;
 }

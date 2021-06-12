@@ -10,32 +10,38 @@
 	<header th:replace="fragments/base.html :: intestazione2"></header>
 
 
-	<form th:action="@{/addCollezione}" method="POST" class="form page" enctype="multipart/form-data">
+	<form th:action="@{/addProiezione}" method="POST" class="form page" enctype="multipart/form-data">
 		<div>
 		<h4 class="nomeCampo">Inserisci i dati della collezione</h4>
 			<div>
-				<span class="nomeCampo">Nome:</span>
-				<span class="contenuto"><input type="text" name="nome" /></span>
+				<span class="nomeCampo">Sala:</span>
+				<span class="contenuto"><input type="text" name="sala" /></span>
 				<!--<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>-->
 			</div>
             <div>
-				<span class="nomeCampo">Descrizione:</span>
-				<span class="contenuto"><input type="text" name="descrizione" /></span>
+				<span class="nomeCampo">Posti totali:</span>
+				<span class="contenuto"><input type="number" name="postiTotali" /></span>
 				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
 			</div>
 			<div>
-				<span class="nomeCampo">Nome curatore:</span>
-				<span class="contenuto"><input type="text" name="nomeCuratore" /></span>
+				<span class="nomeCampo">Data:</span>
+				<span class="contenuto"><input type="text" name="data" /></span>
 				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
 			</div>
 			<div>
-				<span class="nomeCampo">Cognome curatore:</span>
-				<span class="contenuto"><input type="text" name="cognomeCuratore" /></span>
+				<span class="nomeCampo">Orario:</span>
+				<span class="contenuto"><input type="text" name="orario" /></span>
 				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
 			</div>
-			<div>
-				<span class="nomeCampo">Image:</span>
-				<span class="file"> <input type="file" name="file"/></span>
+						<div>
+				<span class="nomeCampo">Nome del film:</span>
+				<span class="contenuto"><input type="text" name="nomeFilm" /></span>
+				<!--<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>-->
+			</div>
+            <div>
+				<span class="nomeCampo">Anno del film:</span>
+				<span class="contenuto"><input type="number" name="annoFilm" /></span>
+				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
 			</div>
 			<div>
 				<span class="bottoniConferma"><button type="submit">Invio</button></span>

@@ -12,9 +12,13 @@
 	<header th:replace="fragments/base.html :: intestazione2"></header>
 
     <div class="elencoAzioni page">
+   	    <a class="azione"></a>
         <a class="azione" th:href="@{'/addFilm'}">Inserisci un film</a>
         <a class="azione" th:href="@{'/addProiezione'}">Inserisci una proiezione</a>
         <a class="azione" th:href="@{'/addRegista'}">Inserisci un regista</a>
+        <a class="azione" th:href="@{'/removeFilm'}">Rimuovi un film</a>
+        <a class="azione" th:href="@{'/removeProiezione'}">Rimuovi una proiezione</a>
+        <a class="azione" th:href="@{'/removeRegista'}">Rimuovi un regista</a>
     </div>
     
     <footer th:replace="fragments/base.html :: fondo"></footer>

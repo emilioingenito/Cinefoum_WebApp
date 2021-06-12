@@ -25,6 +25,32 @@ public class ProiezioneService {
 	private FilmRepository filmRepository; 
 	
 	@Transactional
+	public Proiezione saveProiezioneToDB(String sala, Integer postiTotali, LocalDate data, 
+			LocalTime orario, String nomeFilm, Integer annoFilm) {
+		
+		Proiezione p = new Proiezione();
+
+		Film f;
+		
+		try {
+			f = this.filmRepository.findByTitoloAndAnnoUscita(nomeFilm, annoFilm).get(0);
+		}
+		catch (Exception e) {
+			f = null;
+		}
+		
+		p.setSala(sala);
+		p.setPostiTotali(postiTotali);
+		p.setData(data);
+		p.setOrario(orario);
+		p.setFilm(f);
+		
+		this.inserisci(p);
+		return p;
+	}
+
+	
+	@Transactional
 	public long numeroProiezione() {
 		return this.proiezioneRepository.count();
 	}
@@ -32,6 +58,11 @@ public class ProiezioneService {
 	@Transactional
 	public Proiezione inserisci(Proiezione p) {
 		return proiezioneRepository.save(p);
+	}
+	
+	@Transactional
+	public void elimina(Proiezione p) {
+			this.proiezioneRepository.delete(p);
 	}
 	
 	
@@ -67,6 +98,11 @@ public class ProiezioneService {
 	@Transactional
 	public List<Proiezione> proiezioniPerOrario(LocalTime orario) {
 		return this.proiezioneRepository.findByOrario(orario);
+	}
+	
+	@Transactional
+	public List<Proiezione> proiezioniPerSalaDataOra(String sala, LocalDate data, LocalTime ora) {
+		return this.proiezioneRepository.findBySalaAndDataAndOrario(sala,data,ora);
 	}
 	
 	@Transactional

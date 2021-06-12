@@ -11,4 +11,5 @@ public interface FilmRepository extends CrudRepository<Film, Long>{
 	
 	public List<Film> findByTitolo(String titolo);
 	public List<Film> findByAnnoUscita(LocalDate annoDiUscita);
+	public List<Film> findByTitoloAndAnnoUscita(String titolo, Integer annoUscita);
 }

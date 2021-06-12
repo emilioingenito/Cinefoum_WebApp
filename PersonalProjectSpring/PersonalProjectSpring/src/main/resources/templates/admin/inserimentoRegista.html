@@ -9,9 +9,9 @@
 <body>
 	<header th:replace="fragments/base.html :: intestazione2"></header>
 
-	<form th:action="@{/addArtista}" method="POST" class="form page" enctype="multipart/form-data">
+	<form th:action="@{/addRegista}" method="POST" class="form page" enctype="multipart/form-data">
 		<div>
-		<h4 class="nomeCampo">Inserisci i dati dell'artista</h4>
+		<h4 class="nomeCampo">Inserisci i dati del regista:</h4>
 			<div>
 				<span class="nomeCampo">Nome:</span>
 				<span><input type="text" name="nome" /></span>
@@ -37,10 +37,6 @@
             <div>
 				<span class="nomeCampo">Data di morte:</span>
 				<span class="contenuto"><input type="text" name="dataDiMorte" /></span>
-			</div>
-            <div>
-				<span class="nomeCampo">Nazionalita':</span>
-				<span class="contenuto"><input type="text" name="nazionalita" /></span>
 			</div>
 			<div>
 				<span class="nomeCampo">Image:</span>

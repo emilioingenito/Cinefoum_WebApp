@@ -16,6 +16,7 @@ public interface ProiezioneRepository extends CrudRepository<Proiezione, Long>{
 	public List<Proiezione> findByData(LocalDate data);
 	public List<Proiezione> findBySalaAndData(String sala, LocalDate data);
 	public List<Proiezione> findByFilm(Film film);
+	public List<Proiezione> findBySalaAndDataAndOrario(String sala, LocalDate data, LocalTime ora);
 	
 	
 }

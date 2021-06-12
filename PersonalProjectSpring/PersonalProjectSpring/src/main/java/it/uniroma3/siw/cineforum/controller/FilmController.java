@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import it.uniroma3.siw.cineforum.model.Film;
 import it.uniroma3.siw.cineforum.service.FilmService;
 import it.uniroma3.siw.cineforum.service.ProiezioneService;
 
@@ -46,33 +47,27 @@ public class FilmController {
 		return "admin/home.html";
 	}
 	
-//	@RequestMapping(value="/removeOpera", method = RequestMethod.GET)
-//	public String removeOpera(Model model) {
-//		logger.debug("removeOpera");
-//		return "admin/cancellazioneOpera.html";
-//	}
-//	
-//	@RequestMapping(value = "/removeOpera", method = RequestMethod.POST)
-//	public String removeOpera(@RequestParam("titolo") String titolo, 
-//			@RequestParam("anno") String anno, Model model)
-//	{
-//		logger.debug("removeOpera");
-//		Opera o;
-//		try {
-//			o = this.operaService.operePerTitoloEAnno(titolo, anno).get(0);
-//			this.operaService.rimuovi(o);
-//			logger.debug("opera rimossa dal DB");
-//		} catch (Exception e) {
-//			
-//		}
-//		return "admin/HomeLogin.html";
-//	}
-//	
-//	@RequestMapping(value="/opera/{id}", method = RequestMethod.GET)
-//	public String getOpera(@PathVariable("id") Long id, Model model) {
-//		model.addAttribute("opera", this.operaService.operaPerId(id));
-//		return "opera.html";
-//	}
+	@RequestMapping(value="/removeFilm", method = RequestMethod.GET)
+	public String removeFilm(Model model) {
+		logger.debug("removeFilm");
+		return "admin/cancellazioneFilm.html";
+	}
+	
+	@RequestMapping(value = "/removeFilm", method = RequestMethod.POST)
+	public String removeFilm(@RequestParam("titolo") String titolo, 
+			@RequestParam("annoUscita") Integer annoUscita, Model model)
+	{
+		logger.info("removeFilm");
+		Film f;
+		try {
+			f = this.filmService.filmPerTitoloEAnnoUscita(titolo, annoUscita).get(0);
+			this.filmService.elimina(f);
+			logger.info("film rimosso dal DB");
+		} catch (Exception e) {
+			logger.info("film NON rimosso dal DB");
+		}
+		return "admin/home.html";
+	}
 	
 	@RequestMapping(value = "/schedaFilm/{id}", method = RequestMethod.GET)
     public String getCollezione(@PathVariable("id") Long id, Model model) {

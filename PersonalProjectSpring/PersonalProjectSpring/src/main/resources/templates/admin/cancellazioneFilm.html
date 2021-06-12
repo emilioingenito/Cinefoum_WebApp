@@ -9,34 +9,25 @@
 <body>
 	<header th:replace="fragments/base.html :: intestazione2"></header>
 
-	<form th:action="@{/prenotazione}" method="POST" class="form page">
+
+	<form th:action="@{/removeFilm}" method="POST" class="form page" enctype="multipart/form-data">
 		<div>
-		<h4 class="nomeCampo">Prenota il tuo posto in sala</h4>
+		<h4 class="nomeCampo">Inserisci i dati del film che vuoi cancellare</h4>
 			<div>
-				<span class="nomeCampo">Il tuo Username:</span>
-				<span><input type="text" name="username" /></span>
-				<!--<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>-->
-			</div>
-			<div>
-				<span class="nomeCampo">Sala:</span>
-				<span><input type="text" name="nomeSala" /></span>
+				<span class="nomeCampo">Titolo:</span>
+				<span class="contenuto"><input type="text" name="titolo" /></span>
 				<!--<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>-->
 			</div>		
             <div>
-				<span class="nomeCampo">Data:</span>
-				<span class="contenuto"><input type="text" name="data" /></span>
+				<span class="nomeCampo">Anno:</span>
+				<span class="contenuto"><input type="number" name="annoUscita" /></span>
 				<!--<span th:if="${#fields.hasErrors('anno')}" th:errors="*{anno}"></span>-->
-			</div>
-			<div>
-				<span class="nomeCampo">Numero posti:</span>
-				<span class="contenuto"><input type="number" name="numeroPosti" /></span>
 			</div>
 			<div>
 				<span class="bottoniConferma"><button type="submit">Invio</button></span>
 			</div>
 		</div>
 	</form>	
-
     <footer th:replace="fragments/base.html :: fondo"></footer>
     
 </body>

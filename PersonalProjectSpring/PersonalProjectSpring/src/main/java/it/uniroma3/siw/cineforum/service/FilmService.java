@@ -8,6 +8,8 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -23,7 +25,11 @@ public class FilmService {
 	
 	@Autowired
 	private FilmRepository filmRepository;
+	
+	@Autowired
 	private RegistaRepository registaRepository; 
+	
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Transactional
 	public Film saveFilmToDB(MultipartFile file, String titolo, String trama, Integer annoUscita,
@@ -47,9 +53,11 @@ public class FilmService {
 		
 		try {
 			r = this.registaRepository.findByNomeAndCognome(nomeRegista,cognomeRegista).get(0);
+			logger.info("regista trovato");
 		}
 		catch (Exception e) {
 			r = null;
+			logger.info("regista non trovato");
 		}
 		
 		f.setTitolo(titolo);
@@ -73,8 +81,7 @@ public class FilmService {
 	
 	@Transactional
 	public void elimina(Film film) {
-		if (this.alreadyExists(film))
-			filmRepository.delete(film);
+			this.filmRepository.delete(film);
 	}
 	
 	@Transactional 
@@ -104,6 +111,11 @@ public class FilmService {
 	@Transactional
 	public List<Film> filmPerAnno(LocalDate anno) {
 		return filmRepository.findByAnnoUscita(anno);
+	}
+	
+	@Transactional
+	public List<Film> filmPerTitoloEAnnoUscita(String titolo, Integer annoUscita) {
+		return this.filmRepository.findByTitoloAndAnnoUscita(titolo, annoUscita);
 	}
 
 	@Transactional
