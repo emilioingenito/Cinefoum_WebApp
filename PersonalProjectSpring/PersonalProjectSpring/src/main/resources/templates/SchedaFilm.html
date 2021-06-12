@@ -19,8 +19,8 @@
 
         <div class="scheda">
             <div class="trama">
-                <h1>Knives Out - Cena con Delitto</h1>
-                Massachusetts. Il famoso scrittore di romanzi gialli Harlan Thrombey 
+                <h1 th:text="${film.titolo}">Knives Out - Cena con Delitto</h1>
+                <p th:text="${film.trama}">Massachusetts. Il famoso scrittore di romanzi gialli Harlan Thrombey 
                 viene trovato morto nella propria camera. Una settimana dopo, i parenti 
                 sono convocati per essere interrogati: tutto lascia pensare che si sia
                  trattato di un suicidio, come pensano il detective Elliot e l’agente Wagner,
@@ -47,17 +47,29 @@
                  Inoltre l'anziano scrittore, sempre la sera prima, aveva licenziato Walt, che gli faceva 
                  anche da editore e che voleva far produrre degli adattamenti cinematografici dei romanzi 
                  del padre (cosa a cui egli era sempre stato contrario), e aveva litigato con Ransom dopo 
-                 averlo escluso dal testamento.
+                 averlo escluso dal testamento.</p>
             </div>
             <div class="trafiletto">
                 <div class="regista">
                     <h3>Regista</h3>
-                    <a href="">Rian Johnson</a>
+                    <a href="" th:text="|${regista.nome} ${regista.cognome}|">Rian Johnson</a>
                 </div>
                 <div class="cast">
                     <h3>Cast</h3>
-                    <a href="">Chris Evans</a>
-                    <a href="">Daniel Craig</a>
+                    <ul>
+                    	<li  th:each="attore :${cast}">
+                    		<a href="" th:text="|${attore.nome} ${attore.cognome}|">Chris Evans</a>
+                    	</li>
+                    </ul>
+                </div>
+                <div class="cast">
+                    <h3>Proiezioni</h3>
+                    <ul>
+                    	<li  th:each="proiezione :${proiezioni}">
+                    		<div th:text="${proiezione.data}">Chris Evans</div>
+                    		<div th:text="${proiezione.orario}">orario</div>
+                    	</li>
+                    </ul>
                 </div>
             </div>
         </div>

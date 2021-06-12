@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+ul{
+	list-style-type: none;
+}
+
 .scheda{
     /* border: solid hotpink 2px; */
     background-image: url("../images/knivesOutSchedaFilm.jpg");

@@ -5,18 +5,23 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import it.uniroma3.siw.cineforum.service.FilmService;
+import it.uniroma3.siw.cineforum.service.ProiezioneService;
 
 @Controller
 public class FilmController {
 
 	@Autowired
 	private FilmService filmService;
+	
+	@Autowired
+	private ProiezioneService proiezioneService;
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -68,6 +73,17 @@ public class FilmController {
 //		model.addAttribute("opera", this.operaService.operaPerId(id));
 //		return "opera.html";
 //	}
+	
+	@RequestMapping(value = "/schedaFilm/{id}", method = RequestMethod.GET)
+    public String getCollezione(@PathVariable("id") Long id, Model model) {
+
+        model.addAttribute("film", this.filmService.filmPerId(id));
+        model.addAttribute("proiezioni", this.proiezioneService.proiezioniPerIdFilm(id));
+        model.addAttribute("regista", this.filmService.filmPerId(id).getRegista());
+        model.addAttribute("cast", this.filmService.filmPerId(id).getAttori());
+        return "SchedaFilm";
+
+    }
 	
 	
 }

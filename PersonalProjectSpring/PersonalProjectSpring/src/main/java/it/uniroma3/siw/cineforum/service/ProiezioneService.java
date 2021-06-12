@@ -10,7 +10,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.uniroma3.siw.cineforum.model.Film;
 import it.uniroma3.siw.cineforum.model.Proiezione;
+import it.uniroma3.siw.cineforum.repository.FilmRepository;
 import it.uniroma3.siw.cineforum.repository.ProiezioneRepository;
 
 @Service
@@ -18,6 +20,9 @@ public class ProiezioneService {
 	
 	@Autowired
 	private ProiezioneRepository proiezioneRepository; 
+	
+	@Autowired
+	private FilmRepository filmRepository; 
 	
 	@Transactional
 	public long numeroProiezione() {
@@ -62,6 +67,17 @@ public class ProiezioneService {
 	@Transactional
 	public List<Proiezione> proiezioniPerOrario(LocalTime orario) {
 		return this.proiezioneRepository.findByOrario(orario);
+	}
+	
+	@Transactional
+	public List<Proiezione> findAll() {
+		return (List<Proiezione>) this.proiezioneRepository.findAll();
+	}
+
+	@Transactional
+	public List<Proiezione> proiezioniPerIdFilm(Long id){
+		Optional<Film> f = this.filmRepository.findById(id);
+		return (List<Proiezione>) this.proiezioneRepository.findByFilm(f.get());
 	}
 
 

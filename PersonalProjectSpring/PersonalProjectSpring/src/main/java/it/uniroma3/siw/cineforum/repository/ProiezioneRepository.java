@@ -2,6 +2,7 @@ package it.uniroma3.siw.cineforum.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
+import it.uniroma3.siw.cineforum.model.Film;
 import it.uniroma3.siw.cineforum.model.Proiezione;
 
 import java.time.LocalDate;
@@ -14,6 +15,7 @@ public interface ProiezioneRepository extends CrudRepository<Proiezione, Long>{
 	public List<Proiezione> findByOrario(LocalTime orario);
 	public List<Proiezione> findByData(LocalDate data);
 	public List<Proiezione> findBySalaAndData(String sala, LocalDate data);
+	public List<Proiezione> findByFilm(Film film);
 	
 	
 }
