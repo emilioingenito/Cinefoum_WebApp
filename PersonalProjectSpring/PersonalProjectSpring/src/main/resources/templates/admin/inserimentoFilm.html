@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{/css/Inserimento.css}" rel="stylesheet">
+	<object th:replace="fragments/base.html :: headerfiles()" />
+</head>
+
+<body>
+	<header th:replace="fragments/base.html :: intestazione2"></header>
+
+	<form th:action="@{/addFilm}" method="POST" class="form page" enctype="multipart/form-data">
+		<div>
+		<h4 class="nomeCampo">Inserisci i dati dell'opera</h4>
+			<div>
+				<span class="nomeCampo">Titolo:</span>
+				<span class="contenuto"><input type="text" name="titolo" /></span>
+				<!--<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>-->
+			</div>		
+            <div>
+				<span class="nomeCampo">Anno:</span>
+				<span class="contenuto"><input type="number" name="annoUscita" /></span>
+				<!--<span th:if="${#fields.hasErrors('anno')}" th:errors="*{anno}"></span>-->
+			</div>
+            <div>
+				<span class="nomeCampo">Trama:</span>
+				<span class="contenuto"><input type="text" name="trama" /></span>
+				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
+			</div>
+			<div>
+				<span class="nomeCampo">Nome regista:</span>
+				<span class="contenuto"><input type="text" name="nomeRegista" /></span>
+				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
+			</div>
+			<div>
+				<span class="nomeCampo">Cognome regista:</span>
+				<span class="contenuto"><input type="text" name="cognomeRegista" /></span>
+				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
+			</div>
+			<div>
+				<span class="nomeCampo">Image:</span>
+				<span class="file"> <input type="file" name="file"/></span>
+			</div>
+
+			<div>
+				<span class="bottoniConferma"><button type="submit">Invio</button></span>
+			</div>
+		</div>
+	</form>	
+	<!--<img alt="" class="img_item" src="" th:src="*{'data:image/jpeg;base64,'+{opera.foto}}">-->
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+    
+</body>
+</html>
