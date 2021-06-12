@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head th:replace="fragments/base.html :: headerfiles(title='SIW')"> </head>
+
+<head>
+	<link th:href="@{/css/homePrenotazione.css}" rel="stylesheet">
+	<object  th:replace="fragments/base.html :: headerfiles()"/>
+    <link href="../../static/css/HomeLogin.css" rel="stylesheet"/>
+    <link href="../../static/css/Navbar.css" rel="stylesheet"/>
+</head>
+
 <body>
-	<header th:replace="fragments/base.html :: intestazione"></header>
-    <div>
-    	<h4 th:text="#{header.menuAdmin}">Menu</h4>
-		<div>
-			<a th:href="@{/prodotto}">Elenco prodotti</a>
-   		</div>
-   		<div>
-			<a th:href="@{/admin/prodotto}">Inserisci dati prodotto</a>
-   		</div>
-   		<div>
-			<a th:href="@{/logout}">Logout</a>
-   		</div>
+	<header th:replace="fragments/base.html :: intestazione2"></header>
+
+    <div class="elencoAzioni page">
+        <a class="azione" th:href="@{'/addFilm'}">Inserisci un film</a>
+        <a class="azione" th:href="@{'/addProiezione'}">Inserisci una proiezione</a>
+        <a class="azione" th:href="@{'/addRegista'}">Inserisci un regista</a>
     </div>
-    <footer th:replace="fragments/base.html :: fondo(home='/default')"></footer>
+    
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+    
 </body>
 </html>

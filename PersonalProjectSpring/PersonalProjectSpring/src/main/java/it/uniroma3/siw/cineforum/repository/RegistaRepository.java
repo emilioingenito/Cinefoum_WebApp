@@ -10,5 +10,6 @@ public interface RegistaRepository extends CrudRepository<Regista, Long>{
 	
 	public List<Regista> findByNome(String nome);
 	public List<Regista> findByCognome(String cognome);
+	public List<Regista> findByNomeAndCognome(String nomeRegista, String cognomeRegista);
 	
 }
