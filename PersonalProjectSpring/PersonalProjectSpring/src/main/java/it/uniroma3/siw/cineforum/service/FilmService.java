@@ -15,8 +15,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import it.uniroma3.siw.cineforum.model.Attore;
 import it.uniroma3.siw.cineforum.model.Film;
 import it.uniroma3.siw.cineforum.model.Regista;
+import it.uniroma3.siw.cineforum.repository.AttoreRepository;
 import it.uniroma3.siw.cineforum.repository.FilmRepository;
 import it.uniroma3.siw.cineforum.repository.RegistaRepository;
 
@@ -28,6 +30,9 @@ public class FilmService {
 	
 	@Autowired
 	private RegistaRepository registaRepository; 
+	
+	@Autowired
+	private AttoreRepository attoreRepository; 
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -122,5 +127,42 @@ public class FilmService {
 	public boolean alreadyExists(Film film) {
 		List<Film> listaFilm = this.filmRepository.findByTitolo(film.getTitolo());
 		return listaFilm.size() > 0;
+	}
+	
+	@Transactional
+	public Film inserisciCast(String titolo, Integer annoUscita, String nome, String cognome) {
+		
+		/* Ricerca del film */
+		Film f;
+				
+		try {
+			f = this.filmRepository.findByTitoloAndAnnoUscita(titolo, annoUscita).get(0);
+			logger.info("film trovato");
+		}
+		catch (Exception e) {
+			f = null;
+			logger.info("film non trovato");
+		}
+		
+		/* Ricerca dell'attore */
+		Attore a;
+		
+		try {
+			a = this.attoreRepository.findByNomeAndCognome(nome, cognome).get(0);
+			logger.info("attore trovato");
+		}
+		catch (Exception e) {
+			a = null;
+			logger.info("attore non trovato");
+		}
+		
+		/* Realizza collegamento */
+		if(f != null && a != null) {
+			f.addAttore(a);
+			this.filmRepository.save(f);
+			logger.info("collegamento realizzato");
+		}
+		
+		return f;
 	}
 }

@@ -69,9 +69,26 @@ public class FilmController {
 		return "admin/home.html";
 	}
 	
+	@RequestMapping(value="/addCast", method = RequestMethod.GET)
+	public String addCast(Model model) {
+		logger.debug("addCast");
+		return "admin/inserimentoCast.html";
+	}
+
+	@RequestMapping(value = "/addCast", method = RequestMethod.POST)
+	public String saveCast(@RequestParam("titolo") String titolo,
+			@RequestParam("annoUscita") Integer annoUscita,
+			@RequestParam("nome") String nomeAttore,
+			@RequestParam("cognome") String cognomeAttore,
+			Model model)
+	{
+		this.filmService.inserisciCast(titolo, annoUscita, nomeAttore, cognomeAttore);
+		logger.debug("cast inserito nel DB");
+		return "admin/home.html";
+	}
+	
 	@RequestMapping(value = "/schedaFilm/{id}", method = RequestMethod.GET)
     public String getCollezione(@PathVariable("id") Long id, Model model) {
-
         model.addAttribute("film", this.filmService.filmPerId(id));
         model.addAttribute("proiezioni", this.proiezioneService.proiezioniPerIdFilm(id));
         model.addAttribute("regista", this.filmService.filmPerId(id).getRegista());

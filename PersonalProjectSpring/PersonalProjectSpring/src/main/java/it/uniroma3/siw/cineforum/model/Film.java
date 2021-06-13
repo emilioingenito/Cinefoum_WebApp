@@ -50,5 +50,9 @@ public @Data class Film {
 		this.attori = new LinkedList<Attore>();
 		this.proiezioni = new LinkedList<Proiezione>(); 
 	}
+	
+	public void addAttore(Attore a) {
+		this.attori.add(a);
+	}
 
 }
