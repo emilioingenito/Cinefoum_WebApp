@@ -10,5 +10,6 @@ public interface AttoreRepository extends CrudRepository<Attore, Long>{
 	
 	public List<Attore> findByNome(String nome);
 	public List<Attore> findByCognome(String cognome);
+	public List<Attore> findByNomeAndCognome(String nome, String cognome);
 	
 }
