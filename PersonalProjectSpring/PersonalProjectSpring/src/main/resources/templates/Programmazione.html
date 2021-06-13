@@ -20,8 +20,8 @@
 		<ul>
 			<li th:each="unFilm : ${film}">
 				<div class="film">
-		            <div th:href="@{'/schedaFilm' + '/' + ${unFilm.id}}" class="locandina"
-		            th:style="'background: *{'data:image/jpeg;base64,'+{unFilm.foto}} no-repeat center center fixed;'">
+		            <div th:href="@{'/schedaFilm' + '/' + ${unFilm.id}}" class="locandina">
+		            <img alt="" height="200" width="170" class="" src="" th:src="*{'data:image/jpeg;base64,'+{unFilm.foto}}">
 		                <a th:href="@{'/schedaFilm' + '/' + ${unFilm.id}}">vedi scheda</a>
 		            </div>
 		            <div class="dettagli">

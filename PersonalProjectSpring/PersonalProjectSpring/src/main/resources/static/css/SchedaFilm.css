@@ -7,12 +7,19 @@ ul{
 	list-style-type: none;
 }
 
+.artistPic{
+	position: fixed;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+
 .scheda{
     /* border: solid hotpink 2px; */
-    background-image: url("../images/knivesOutSchedaFilm.jpg");
+   /* background-image: url("../images/knivesOutSchedaFilm.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
     height: auto;
     display: flex;
 }

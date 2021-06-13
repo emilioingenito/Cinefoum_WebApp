@@ -18,6 +18,7 @@
         <div class="sfondoNero"></div>
 
         <div class="scheda">
+        	<img alt="" class="artistPic" src="" th:src="*{'data:image/jpeg;base64,'+{film.foto}}">
             <div class="trama">
                 <h1 th:text="${film.titolo}">Knives Out - Cena con Delitto</h1>
                 <p th:text="${film.trama}">Massachusetts. Il famoso scrittore di romanzi gialli Harlan Thrombey 
