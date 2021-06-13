@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import it.uniroma3.siw.cineforum.controller.validator.CredentialsValidator;
+import it.uniroma3.siw.cineforum.controller.validator.UserValidator;
 import it.uniroma3.siw.cineforum.model.Credentials;
 import it.uniroma3.siw.cineforum.model.User;
 import it.uniroma3.siw.cineforum.service.CredentialsService;
@@ -20,6 +22,11 @@ public class AuthenticationController {
 	@Autowired
 	private CredentialsService credentialsService;
 	
+	@Autowired
+	private UserValidator userValidator;
+	
+	@Autowired
+	private CredentialsValidator credentialsValidator;
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET) 
 	public String showRegisterForm (Model model) {
@@ -56,6 +63,10 @@ public class AuthenticationController {
                  BindingResult credentialsBindingResult,
                  Model model) {
 
+    	
+    	 // validate user and credentials fields
+        this.userValidator.validate(user, userBindingResult);
+        this.credentialsValidator.validate(credentials, credentialsBindingResult);
 
         // if neither of them had invalid contents, store the User and the Credentials into the DB
         if(!userBindingResult.hasErrors() && ! credentialsBindingResult.hasErrors()) {
