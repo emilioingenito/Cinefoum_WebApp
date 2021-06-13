@@ -5,16 +5,16 @@
 
 .elencoAzioni{
     /* border: solid khaki 2px; */
-    display: flex;
+  	display: flex;
     flex-direction: column;
+    width:100%;
+    height:1000px;
     align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    height: 100%;
     background-image: url(../images/tickets-vector-design-templates-movie-theater-cinema-circus-concert-sh.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+   
 }
 
 .azione{
@@ -23,6 +23,29 @@
     font-size: 200%;
     font-weight: bold;
     color: black;
+    border-radius: 10%;
     background-color:rgba(203, 204, 203, 0.349);
 }
 
+.box{
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.flex-container {
+	width: 100%;
+    height: 100%;
+	padding-top:10%;
+    display: flex;
+    /*border: 2px solid pink;*/
+}
+
+.flex-child {
+	text-align: center;
+    flex: 1;
+    /*border: 2px solid blue;*/
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 

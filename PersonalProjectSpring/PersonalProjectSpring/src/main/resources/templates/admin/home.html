@@ -10,18 +10,22 @@
 
 <body>
 	<header th:replace="fragments/base.html :: intestazione2"></header>
-
-    <div class="elencoAzioni page">
-   	    <a class="azione"></a>
-        <a class="azione" th:href="@{'/addFilm'}">Inserisci un film</a>
-        <a class="azione" th:href="@{'/addProiezione'}">Inserisci una proiezione</a>
-        <a class="azione" th:href="@{'/addRegista'}">Inserisci un regista</a>
-         <a class="azione" th:href="@{'/addAttore'}">Inserisci un attore</a>
-        <a class="azione" th:href="@{'/removeFilm'}">Rimuovi un film</a>
-        <a class="azione" th:href="@{'/removeProiezione'}">Rimuovi una proiezione</a>
-        <a class="azione" th:href="@{'/removeRegista'}">Rimuovi un regista</a>
-        <a class="azione" th:href="@{'/removeAttore'}">Rimuovi un attore</a>
-    </div>
+	<div class="elencoAzioni">
+   	   <div class="flex-container">
+   	    <div class="flex-child">
+        	<div class="box"><a class="azione" th:href="@{'/addFilm'}">Inserisci un film</a></div>
+        	<div class="box"><a class="azione" th:href="@{'/addProiezione'}">Inserisci una proiezione</a></div>
+       		<div class="box"><a class="azione" th:href="@{'/addRegista'}">Inserisci un regista</a></div>
+        	<div class="box"><a class="azione" th:href="@{'/addAttore'}">Inserisci un attore</a></div>
+   	  	</div>
+   	    <div class="flex-child">
+        	<div class="box"><a class="azione" th:href="@{'/removeFilm'}">Rimuovi un film</a></div>
+        	<div class="box"><a class="azione" th:href="@{'/removeProiezione'}">Rimuovi una proiezione</a></div>
+        	<div class="box"><a class="azione" th:href="@{'/removeRegista'}">Rimuovi un regista</a></div>
+        	<div class="box"><a class="azione" th:href="@{'/removeAttore'}">Rimuovi un attore</a></div>
+   	    </div>
+       </div>
+	</div>
     
     <footer th:replace="fragments/base.html :: fondo"></footer>
     
