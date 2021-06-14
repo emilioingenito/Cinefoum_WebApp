@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import it.uniroma3.siw.cineforum.model.Film;
+import it.uniroma3.siw.cineforum.service.AttoreService;
 import it.uniroma3.siw.cineforum.service.FilmService;
 import it.uniroma3.siw.cineforum.service.ProiezioneService;
+import it.uniroma3.siw.cineforum.service.RegistaService;
 
 @Controller
 public class FilmController {
@@ -23,6 +25,12 @@ public class FilmController {
 	
 	@Autowired
 	private ProiezioneService proiezioneService;
+	
+	@Autowired
+	private AttoreService attoreService;
+	
+	@Autowired
+	private RegistaService registaService;
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -44,7 +52,7 @@ public class FilmController {
 	{
 		this.filmService.saveFilmToDB(file, titolo, trama, annoUscita, nomeRegista, cognomeRegista);
 		logger.debug("film inserito nel DB");
-		return "admin/home.html";
+		return "admin/successoOperazioneAdmin.html";
 	}
 	
 	@RequestMapping(value="/removeFilm", method = RequestMethod.GET)
@@ -66,7 +74,7 @@ public class FilmController {
 		} catch (Exception e) {
 			logger.info("film NON rimosso dal DB");
 		}
-		return "admin/home.html";
+		return "admin/successoOperazioneAdmin.html";
 	}
 	
 	@RequestMapping(value="/addCast", method = RequestMethod.GET)
@@ -84,7 +92,7 @@ public class FilmController {
 	{
 		this.filmService.inserisciCast(titolo, annoUscita, nomeAttore, cognomeAttore);
 		logger.debug("cast inserito nel DB");
-		return "admin/home.html";
+		return "admin/successoOperazioneAdmin.html";
 	}
 	
 	@RequestMapping(value = "/schedaFilm/{id}", method = RequestMethod.GET)
@@ -96,6 +104,20 @@ public class FilmController {
         return "SchedaFilm";
 
     }
+	
+	@RequestMapping(value="/attore/{id}", method = RequestMethod.GET)
+	public String attore(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("artista", this.attoreService.attorePerId(id));
+		logger.debug("attore");
+		return "persona.html";
+	}
+	
+	@RequestMapping(value="/regista/{id}", method = RequestMethod.GET)
+	public String regista(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("artista", this.registaService.registaPerId(id));
+		logger.debug("regista");
+		return "persona.html";
+	}
 	
 	
 }

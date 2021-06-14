@@ -1,0 +1,201 @@
+
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+}
+
+.titleContainer{
+    height: 45px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: black;
+}
+
+.title{
+    padding: 5px 10px 5px 10px;
+    color: white;
+    margin-left: 30px;
+}
+
+/*Nome artista, foto e biografia*/
+.artistName{
+  margin: 10px 50px 10px 50px;
+}
+
+#flex-container{
+  display: flex;
+  justify-content: flex-start;
+  margin: 0px 50px;
+  height: 500px;
+  
+}
+
+.artistPic{
+  background-image: url(../images/vanGogh.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  width: 70%;
+  flex-grow: 2;
+}
+
+.artistInfo{
+	flex-grow: 1;
+	width: 30%;
+}
+
+.boxDati{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  color: white;
+  background-color: #4072a0;
+  margin-left: 20px;
+  height: 70px;
+}
+
+.boxInfo{
+  margin-left: 20px;
+  text-align: center;
+  border: 2px solid #4072a0;
+  background-color: #b0f4ff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; 
+}
+
+.question{
+  margin-top: 20px;
+}
+
+.answer{
+  margin-bottom: 30px;
+}
+
+.lastanswer{
+  margin-bottom: 40px;
+}
+
+.bio{
+  margin: 50px;
+  text-align: justify;
+  text-justify: auto;
+  font-size: 20px;
+}
+
+.biopar{
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.correlate{
+  margin-left: 50px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.opereCont{
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 30px 50px 50px;
+  height: 350px;
+}
+.opera{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.op1{
+  background-image: url(../images/notteStellata.jpg);
+  background-size: cover;
+  flex-grow: 1;
+  margin-right: 20px;
+  align-items: stretch;
+  border-radius: 20px;
+  height: 200px;
+}
+
+.op2{
+  background-image: url(../images/girasoli.jpg);
+  background-size: cover;
+  flex-grow: 1;
+  margin-right: 20px;
+  align-items: stretch;
+  border-radius: 20px;
+  height: 200px;
+}
+
+.op3{
+  background-image: url(../images/img2.jpg);
+  background-size: cover;
+  flex-grow: 1;
+  margin-right: 20px;
+  align-items: stretch;
+  border-radius: 20px;
+  height: 200px;
+}
+
+.opM1{
+  background-image: url(../images/ilFalsoSpecchio.jpg);
+  background-size: cover;
+  flex-grow: 1;
+  margin-right: 20px;
+  align-items: stretch;
+  border-radius: 20px;
+  height: 200px;
+}
+
+.opM2{
+  background-image: url(../images/golconda.jpg);
+  background-size: cover;
+  flex-grow: 1;
+  margin-right: 20px;
+  align-items: stretch;
+  border-radius: 20px;
+  height: 200px;
+}
+
+.opM3{
+  background-image: url(../images/ilFiglioDellUomo.jpg);
+  background-size: cover;
+  flex-grow: 1;
+  margin-right: 20px;
+  align-items: stretch;
+  border-radius: 20px;
+  height: 200px;
+}
+
+.nomeOpera{
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+footer{
+  background-color: black;
+  height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

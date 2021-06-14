@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.uniroma3.siw.cineforum.model.Proiezione;
-import it.uniroma3.siw.cineforum.service.FilmService;
 import it.uniroma3.siw.cineforum.service.ProiezioneService;
 
 @Controller
@@ -23,9 +22,6 @@ public class ProiezioneController {
 
 	@Autowired
 	private ProiezioneService proiezioneService;
-	
-	@Autowired
-	private FilmService filmService;
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -45,7 +41,7 @@ public class ProiezioneController {
 			Model model)
 	{
 		this.proiezioneService.saveProiezioneToDB(sala, postiTotali, data, orario, nomeFilm, annoFilm);
-		return "admin/home.html";
+		return "admin/successoOperazioneAdmin.html";
 	}
 	
 	@RequestMapping(value="/removeProiezione", method = RequestMethod.GET)
@@ -68,7 +64,7 @@ public class ProiezioneController {
 		} catch (Exception e) {
 			
 		}
-		return "admin/home.html";
+		return "admin/successoOperazioneAdmin.html";
 	}
 	
 //	@RequestMapping(value = "/collezione/{id}", method = RequestMethod.GET)

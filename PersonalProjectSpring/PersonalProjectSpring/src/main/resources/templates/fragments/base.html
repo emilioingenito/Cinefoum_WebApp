@@ -22,7 +22,7 @@
             <div class="comandi">
                 <a th:href="@{'/home'}" class="comando">Home</a>
                 <a th:href="@{'/programmazione'}" class="comando">Film</a>
-                <a th:href="@{'/login'}" class="comando bordo">Prenota il tuo biglietto</a>
+                <a th:href="@{'/login'}" class="comando bordo">Accedi alla tua area personale</a>
                 <a th:href="@{'/informazioni'}" class="comando">Informazioni</a>
             </div>
             <div class="peterPan">
@@ -49,8 +49,18 @@
             <div class="comandi2">
                 <a th:href="@{'/home'}" class="comando2">Home</a>
                 <a th:href="@{'/programmazione'}" class="comando2">Film</a>
-                <a th:href="@{'/login'}" class="comando2 bordo">Prenota il tuo biglietto</a>
+                <a th:href="@{'/login'}" class="comando2 bordo">Accedi alla tua area personale</a>
                 <a th:href="@{'/informazioni'}" class="comando2">Informazioni</a>
+            </div>
+        </div>
+	</header>
+	
+		<!-- Navbar 4 admin  -->
+	<header th:fragment="intestazione4">
+		<div class="navbar2">
+            <div class="comandi2">
+                <a th:href="@{'/admin/home'}" class="comando2">Home</a>
+                <a th:href="@{'/logout'}" class="comando2">Logout</a>
             </div>
         </div>
 	</header>

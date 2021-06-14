@@ -1,5 +1,6 @@
 package it.uniroma3.siw.cineforum.service;
 
+import java.util.Collections;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -18,7 +19,9 @@ public class ProgrammazioneService {
 
 	@Transactional
 	public List<Film> findAll() {
-		return (List<Film>) this.filmRepository.findAll();
+		List<Film> l = (List<Film>) this.filmRepository.findAll();
+		Collections.reverse(l);
+		return l;
 	}
 
 }

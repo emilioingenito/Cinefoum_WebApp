@@ -19,6 +19,11 @@ public class FragmentController {
 		return "index.html";
 	}
 	
+	@RequestMapping(value = "/admin/home", method = RequestMethod.GET) 
+	public String homeAdmin (Model model) {
+		return "admin/home.html";
+	}
+	
 	@RequestMapping(value = "/informazioni", method = RequestMethod.GET) 
 	public String info (Model model) {
 		return "Informazioni.html";

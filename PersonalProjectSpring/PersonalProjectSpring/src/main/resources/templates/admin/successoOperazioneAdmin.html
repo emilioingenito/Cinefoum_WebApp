@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+	<link th:href="@{/css/Successo.css}" rel="stylesheet">
+    <object  th:replace="fragments/base.html :: headerfiles()"/>
+</head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione4"></header>
+	<div class="page">
+	<div class="sfondoNero"></div>
+		<h1>Operazione effettuata con successo!</h1>
+	</div>
+    <footer th:replace="fragments/base.html :: fondo(home='/')"></footer>
+</body>
+</html>

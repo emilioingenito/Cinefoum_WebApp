@@ -44,7 +44,7 @@ public class AttoreController {
 	{
 		this.attoreService.saveAttoreToDB(file, nome, cognome, dataDiNascita, dataDiMorte,
                  luogoDiNascita, luogoDiMorte);
-		return "admin/home.html";
+		return "admin/successoOperazioneAdmin.html";
 	}
 	
 	@RequestMapping(value="/removeAttore", method = RequestMethod.GET)
@@ -66,7 +66,7 @@ public class AttoreController {
 		} catch (Exception e) {
 			logger.info("attore NON rimosso dal DB");
 		}
-		return "admin/home.html";
+		return "admin/successoOperazioneAdmin.html";
 	}
 	
 }

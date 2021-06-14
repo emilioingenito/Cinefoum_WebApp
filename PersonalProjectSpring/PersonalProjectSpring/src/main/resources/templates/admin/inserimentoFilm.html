@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	<header th:replace="fragments/base.html :: intestazione2"></header>
+	<header th:replace="fragments/base.html :: intestazione4"></header>
 
 	<form th:action="@{/addFilm}" method="POST" class="form page" enctype="multipart/form-data">
 		<div>
@@ -22,11 +22,6 @@
 				<span class="contenuto"><input type="number" name="annoUscita" /></span>
 				<!--<span th:if="${#fields.hasErrors('anno')}" th:errors="*{anno}"></span>-->
 			</div>
-            <div>
-				<span class="nomeCampo">Trama:</span>
-				<span class="contenuto"><input type="text" name="trama" /></span>
-				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
-			</div>
 			<div>
 				<span class="nomeCampo">Nome regista:</span>
 				<span class="contenuto"><input type="text" name="nomeRegista" /></span>
@@ -35,6 +30,11 @@
 			<div>
 				<span class="nomeCampo">Cognome regista:</span>
 				<span class="contenuto"><input type="text" name="cognomeRegista" /></span>
+				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
+			</div>
+			<div>
+				<span class="nomeCampo">Trama:</span>
+				<span class="contenuto"><textarea class="grande" type="text" name="trama"></textarea></span>
 				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
 			</div>
 			<div>

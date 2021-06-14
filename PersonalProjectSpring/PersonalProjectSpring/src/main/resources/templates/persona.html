@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{/css/persona.css}" rel="stylesheet">
+	<object  th:replace="fragments/base.html :: headerfiles()"/>
+</head>
+
+<body>
+	<header th:replace="fragments/base.html :: intestazione3"></header>
+
+
+    <div class="page">
+    <div class="sfondoNero"></div>
+    <!-- Artista -->
+      <h1 class="artistName" th:text="|${artista.nome} ${artista.cognome}|">
+        Vincent van Gogh
+      </h1>
+      <div id="flex-container">
+       	  <img alt="" class="artistPic" src="" th:src="*{'data:image/jpeg;base64,'+{artista.foto}}">
+          <div class="artistInfo">
+            <div class="boxDati">
+              <p>Dati artista</p>
+            </div>
+            <div class="boxInfo">
+              <p class="question"><strong>Nome e cognome</strong></p>
+              <p class="answer" th:text="|${artista.nome} ${artista.cognome}|"> Vincent Willem van Gogh</p>
+              <p class="question"><strong>Data di nascita</strong></p>
+              <p class="answer" th:text="${artista.dataNascita}">30 marzo 1853</p>
+              <p class="question" ><strong>Luogo di nascita</strong></p>
+              <p class="answer" th:text="${artista.luogoNascita}">Zundert</p>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+   <footer th:replace="fragments/base.html :: fondo"></footer>
+   
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

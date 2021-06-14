@@ -53,13 +53,13 @@
             <div class="trafiletto">
                 <div class="regista">
                     <h3>Regista</h3>
-                    <a href="" th:text="|${regista.nome} ${regista.cognome}|">Rian Johnson</a>
+                    <a th:href="@{'/regista' + '/' + ${regista.id}}" th:text="|${regista.nome} ${regista.cognome}|">Rian Johnson</a>
                 </div>
                 <div class="cast">
                     <h3>Cast</h3>
                     <ul>
                     	<li  th:each="attore :${cast}">
-                    		<a href="" th:text="|${attore.nome} ${attore.cognome}|">Chris Evans</a>
+                    		<a th:href="@{'/attore' + '/' + ${attore.id}}" th:text="|${attore.nome} ${attore.cognome}|">Chris Evans</a>
                     	</li>
                     </ul>
                 </div>
